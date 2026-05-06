@@ -2,6 +2,9 @@ name: "AWS deploy"
 
 on: 
     push
+env: 
+    BUCKET_NAME: "tane.com"
+    AWS_REGION: "ap-southeast-2"
 
 permissions:
     id-token: write
@@ -29,10 +32,10 @@ jobs:
               uses: aws-actions/configure-aws-credentials@v6.1.0
               with:
                 role-to-assume: arn:aws:iam::405481637631:role/tane-site-gba
-                aws-region: ap-southeast-2
+                aws-region: ${{ env.AWS_REGION }}
             
-            - name: Additional steps
+            - name: Copy index.html to S3
               run: |
-                # Your commands that require AWS credentials
-                aws sts get-caller-identity
+                aws s3 cp ./dist/index.html s3://${{ env.BUCKET_NAME }}/
+
     
