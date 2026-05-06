@@ -13,7 +13,7 @@ jobs:
             - name: Configure AWS Credentials
               uses: aws-actions/configure-aws-credentials@v6.1.0
               with:
-                role-to-assume: tane-site-gba
+                role-to-assume: arn:aws:iam::405481637631:role/tane-site-gba
                 aws-region: ap-southeast-2
             
             - name: Additional steps
