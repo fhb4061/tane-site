@@ -36,6 +36,6 @@ jobs:
             
             - name: Copy index.html to S3
               run: |
-                aws s3 cp ./dist/index.html s3://${{ env.BUCKET_NAME }}/
+                aws s3 cp ./dist s3://${{ env.BUCKET_NAME }}/ --recursive
 
     
