@@ -30,13 +30,13 @@ export function Skills() {
     return (
         <Section id="skills">
             <SectionHeader>
-                <WrenchIcon size={30} />
+                <WrenchIcon size={30} className="stroke-primary" />
                 <h2 className="text-2xl lg:text-3xl font-semibold">Skills</h2>
             </SectionHeader>
 
             <Card>
                 {skills.map((value) => (
-                    <div id={value.category} className="grid grid-rows-2 lg:grid-cols-[170px_1fr] items-start py-5 border-b last:border-b-0">
+                    <div id={value.category} className="grid grid-rows-2 lg:grid-cols-[170px_1fr] items-start py-5 border-b border-primary last:border-b-0">
                         <span className="tracking-wide font-bold uppercase">{value.category}</span>
                         <span className="leading-relaxed">{value.skills.join(", ")}</span>
                     </div>
