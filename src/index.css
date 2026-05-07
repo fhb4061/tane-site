@@ -1,11 +1,18 @@
 @import "tailwindcss";
 
 @theme inline {
-    --color-background: var(--color-zinc-900);
-    --color-foreground: var(--color-zinc-100);
+  --color-background: var(--color-zinc-900);
+  --color-foreground: var(--color-zinc-100);
 }
 
-body {
+@layer base {
+
+  body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+  }
+
+  html {
+    @apply font-sans;
+  }
 }
