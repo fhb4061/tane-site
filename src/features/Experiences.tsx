@@ -43,7 +43,7 @@ export function Experiences() {
     return (
         <Section id="experience">
             <SectionHeader>
-                <BriefcaseBusiness size={30} />
+                <BriefcaseBusiness size={30} className="stroke-primary" />
                 <h2 className="text-2xl lg:text-3xl font-semibold">Experiences</h2>
             </SectionHeader>
 
@@ -52,7 +52,7 @@ export function Experiences() {
                     {/* header */}
                     <div>
                         <h3 className="text-xl lg:text-2xl font-bold">{exp.role}</h3>
-                        <div className="text-zinc-400 grid">
+                        <div className="grid text-faded-fg">
                             <span>{exp.company}</span>
                             <span>{exp.period}</span>
                         </div>

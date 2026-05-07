@@ -14,9 +14,13 @@ export function Section({ children, id }: SectionProps) {
     )
 }
 
-export function SectionHeader({ children }: PropsWithChildren) {
+type SectionHeaderProps = {
+    className?: string;
+} & PropsWithChildren;
+
+export function SectionHeader({ children }: SectionHeaderProps) {
     return (
-        <div className="flex gap-2 items-center">
+        <div className={`flex gap-2 items-center`}>
             {children}
         </div>
     )

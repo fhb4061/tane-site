@@ -25,16 +25,16 @@ export function Contact() {
     return (
         <ul className="space-y-2.5">
             <li className="flex items-center gap-4">
-                <MailIcon className="size-4" />
-                <a className="underline underline-offset-4 hover:text-foreground-hover" href={`mailto:${contact.email}`}>
+                <MailIcon size={20} className="stroke-primary" />
+                <a className="p-1 underline underline-offset-4 hover:text-foreground-hover outline-0 focus-visible:ring-2 focus-visible:ring-primary" href={`mailto:${contact.email}`}>
                     {contact.email}
                 </a>
             </li>
 
             <li className="flex items-center gap-4">
-                <MessageSquareMore className="size-4" />
+                <MessageSquareMore size={20} className="stroke-primary" />
                 <a
-                    className="underline underline-offset-4 hover:text-foreground-hover"
+                    className="p-1 underline underline-offset-4 hover:text-foreground-hover outline-0 focus-visible:ring-2 focus-visible:ring-primary"
                     href={contact.linkedinUrl}
                     rel="noopener noreferrer"
                     target="_blank"
@@ -44,9 +44,9 @@ export function Contact() {
             </li>
 
             <li className="flex items-center gap-4">
-                <FolderGit2 className="size-4" />
+                <FolderGit2 size={20} className="stroke-primary" />
                 <a
-                    className="underline underline-offset-4 hover:text-foreground-hover"
+                    className="p-1 underline underline-offset-4 hover:text-foreground-hover outline-0 focus-visible:ring-2 focus-visible:ring-primary"
                     href={contact.githubLink}
                     rel="noopener noreferrer"
                     target="_blank"
@@ -56,9 +56,9 @@ export function Contact() {
             </li>
 
             <li className="flex items-center gap-4">
-                <PhoneCallIcon className="size-4" />
+                <PhoneCallIcon size={20} className="stroke-primary" />
                 <a
-                    className="underline underline-offset-4 hover:text-foreground-hover"
+                    className="p-1 underline underline-offset-4 hover:text-foreground-hover outline-0 focus-visible:ring-2 focus-visible:ring-primary"
                     href={`tel:${contact.phoneNumber}`}
                 >
                     {contact.phoneLabel}

@@ -6,7 +6,7 @@ export function CertsAward() {
     return (
         <Section>
             <SectionHeader>
-                <Award size={30} />
+                <Award size={30} className="stroke-primary" />
                 <h2 className="text-2xl lg:text-3xl font-semibold">Certs & Awards</h2>
             </SectionHeader>
             <div className="grid gap-5 grid-cols-1 lg:grid-cols-2">
@@ -24,7 +24,7 @@ export function CertsAward() {
                         href="https://www.credly.com/badges/a788484c-dfee-40ad-a5b5-920053580638"
                         rel="noopener noreferrer"
                         target="_blank"
-                        className="underline underline-offset-4 hover:text-foreground-hover"
+                        className="p-1 underline underline-offset-4 hover:text-foreground-hover outline-0 focus-visible:ring-2 focus-visible:ring-primary"
                     >
                         Azure Fundamentals
                     </a>
