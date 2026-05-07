@@ -37,9 +37,9 @@ export function Skills() {
 
                 <Card>
                     {skills.map((value) => (
-                        <div id={value.category} className="grid grid-cols-[175px_1fr] py-5 border-b last:border-b-0">
-                            <span className="min-w-2">{value.category}</span>
-                            <span>{value.skills.join(", ")}</span>
+                        <div id={value.category} className="grid grid-cols-[170px_1fr] items-start py-5 border-b last:border-b-0">
+                            <span className="tracking-wide">{value.category}</span>
+                            <span className="leading-relaxed">{value.skills.join(", ")}</span>
                         </div>
                     ))}
                 </Card>
