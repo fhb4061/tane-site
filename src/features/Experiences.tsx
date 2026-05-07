@@ -1,5 +1,5 @@
 import { BriefcaseBusiness } from "lucide-react";
-import { Section } from "../components/Section";
+import { Section, SectionHeader } from "../components/Section";
 import { Card } from "../components/Card";
 
 type ExperienceItem = {
@@ -42,36 +42,35 @@ const experiences: ExperienceItem[] = [
 export function Experiences() {
     return (
         <Section id="experience">
-            <div className="space-y-4">
-                <div className="flex gap-2 items-center">
-                    <BriefcaseBusiness className="size-5" />
-                    <h3 className="text-xl font-semibold">Experience</h3>
-                </div>
+            <SectionHeader>
+                <BriefcaseBusiness size={30} />
+                <h2 className="text-2xl lg:text-3xl font-semibold">Experiences</h2>
+            </SectionHeader>
 
-                {experiences.map((exp) => (
-                    <Card id={exp.period}>
-                        {/* header */}
-                        <div>
-                            <h3 className="font-bold text-xl">{exp.role}</h3>
-                            <div className="text-zinc-400 grid">
-                                <span>{exp.company}</span>
-                                <span>{exp.period}</span>
-                            </div>
+            {experiences.map((exp) => (
+                <Card id={exp.period}>
+                    {/* header */}
+                    <div>
+                        <h3 className="text-xl lg:text-2xl font-bold">{exp.role}</h3>
+                        <div className="text-zinc-400 grid">
+                            <span>{exp.company}</span>
+                            <span>{exp.period}</span>
                         </div>
+                    </div>
 
-                        {/* content */}
-                        <div className="py-5">
-                            <div className="grid gap-5">
-                                {exp.bullets.map((resp) => (
-                                    <span id={resp}>
-                                        {resp}
-                                    </span>
-                                ))}
-                            </div>
+                    {/* content */}
+                    <div className="py-5">
+                        <div className="grid gap-5">
+                            {exp.bullets.map((resp) => (
+                                <span id={resp}>
+                                    {resp}
+                                </span>
+                            ))}
                         </div>
-                    </Card>
-                ))}
-            </div>
+                    </div>
+                </Card>
+            ))}
+
         </Section>
     )
 }

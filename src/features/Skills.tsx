@@ -1,5 +1,5 @@
 import { WrenchIcon } from "lucide-react";
-import { Section } from "../components/Section";
+import { Section, SectionHeader } from "../components/Section";
 import { Card } from "../components/Card";
 
 type Skills = {
@@ -29,22 +29,20 @@ const skills: Skills[] = [
 export function Skills() {
     return (
         <Section id="skills">
-            <div className="space-y-4">
-                <div className="flex gap-2 items-center">
-                    <WrenchIcon className="size-5" />
-                    <h3 className="text-xl font-semibold">Skills</h3>
-                </div>
+            <SectionHeader>
+                <WrenchIcon size={30} />
+                <h2 className="text-2xl lg:text-3xl font-semibold">Skills</h2>
+            </SectionHeader>
 
-                <Card>
-                    {skills.map((value) => (
-                        <div id={value.category} className="grid grid-cols-[170px_1fr] items-start py-5 border-b last:border-b-0">
-                            <span className="tracking-wide">{value.category}</span>
-                            <span className="leading-relaxed">{value.skills.join(", ")}</span>
-                        </div>
-                    ))}
-                </Card>
-            </div>
-        </Section>
+            <Card>
+                {skills.map((value) => (
+                    <div id={value.category} className="grid grid-rows-2 lg:grid-cols-[170px_1fr] items-start py-5 border-b last:border-b-0">
+                        <span className="tracking-wide font-bold uppercase">{value.category}</span>
+                        <span className="leading-relaxed">{value.skills.join(", ")}</span>
+                    </div>
+                ))}
+            </Card>
+        </Section >
     )
 
 }

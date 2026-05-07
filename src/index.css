@@ -1,14 +1,16 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-background: var(--color-zinc-900);
-  --color-foreground: var(--color-zinc-100);
-  --color-foreground-hover: var(--color-zinc-300);
+  --color-background: var(--color-zinc-950);
+  --color-foreground: var(--foreground);
+  --color-foreground-hover: var(--color-zinc-400);
+  --color-primary: var(--primary);
   --color-faded-fg: var(--color-zinc-400);
 }
 
 :root {
-  --foreground-color: #1aad26;
+  --primary: oklch(0.83 0.17 145);
+  --foreground: #ffff;
 }
 
 @layer base {
@@ -16,6 +18,7 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-size: var(--text-base);
   }
 
   html {
