@@ -1,11 +1,12 @@
-import { MailIcon, MapPin, MessageSquareMore, PhoneCallIcon } from "lucide-react";
+import { FolderGit2, MailIcon, MessageSquareMore, PhoneCallIcon } from "lucide-react";
 
 type PortfolioContact = {
     email: string;
     phone: string;
     linkedinUrl: string;
     linkedinLabel: string;
-    location: string;
+    githubLabel: string;
+    githubLink: string;
 };
 
 // usually get this from api maybe but will leave it here for simplicity
@@ -14,7 +15,8 @@ const contact: PortfolioContact = {
     phone: "+61 401 237 175",
     linkedinUrl: "https://www.linkedin.com/in/tane-lopeti",
     linkedinLabel: "linkedin.com/in/tane-lopeti",
-    location: "Melbourne, Australia",
+    githubLabel: "github.com/fhb4061",
+    githubLink: "https://github.com/fhb4061",
 }
 
 export function Contact() {
@@ -22,7 +24,7 @@ export function Contact() {
         <ul className="space-y-2.5">
             <li className="flex items-center gap-4">
                 <MailIcon className="size-4" />
-                <a className="underline underline-offset-4 hover:text-zinc-300" href={`mailto:${contact.email}`}>
+                <a className="underline underline-offset-4 hover:text-foreground-hover" href={`mailto:${contact.email}`}>
                     {contact.email}
                 </a>
             </li>
@@ -30,7 +32,7 @@ export function Contact() {
             <li className="flex items-center gap-4">
                 <MessageSquareMore className="size-4" />
                 <a
-                    className="underline underline-offset-4 hover:text-zinc-300"
+                    className="underline underline-offset-4 hover:text-foreground-hover"
                     href={contact.linkedinUrl}
                     rel="noopener noreferrer"
                     target="_blank"
@@ -40,13 +42,20 @@ export function Contact() {
             </li>
 
             <li className="flex items-center gap-4">
-                <PhoneCallIcon className="size-4" />
-                {contact.phone}
+                <FolderGit2 className="size-4" />
+                <a
+                    className="underline underline-offset-4 hover:text-foreground-hover"
+                    href={contact.githubLink}
+                    rel="noopener noreferrer"
+                    target="_blank"
+                >
+                    {contact.githubLabel}
+                </a>
             </li>
 
             <li className="flex items-center gap-4">
-                <MapPin className="size-4" />
-                {contact.location}
+                <PhoneCallIcon className="size-4" />
+                {contact.phone}
             </li>
         </ul>
     )
