@@ -1,11 +1,24 @@
 @import "tailwindcss";
 
 @theme inline {
-    --color-background: var(--color-zinc-900);
-    --color-foreground: var(--color-zinc-100);
+  --color-background: var(--color-zinc-900);
+  --color-foreground: var(--color-zinc-100);
+  --color-foreground-hover: var(--color-zinc-300);
+  --color-faded-fg: var(--color-zinc-400);
 }
 
-body {
+:root {
+  --foreground-color: #1aad26;
+}
+
+@layer base {
+
+  body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+  }
+
+  html {
+    @apply font-sans;
+  }
 }
