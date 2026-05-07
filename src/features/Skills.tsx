@@ -1,6 +1,6 @@
 import { WrenchIcon } from "lucide-react";
 import { Section, SectionHeader } from "../components/Section";
-import { Card } from "../components/Card";
+import { Card, CardContent } from "../components/Card";
 
 type Skills = {
     category: string;
@@ -35,12 +35,16 @@ export function Skills() {
             </SectionHeader>
 
             <Card>
-                {skills.map((value) => (
-                    <div id={value.category} className="grid grid-rows-2 lg:grid-cols-[170px_1fr] items-start py-5 border-b border-primary last:border-b-0">
-                        <span className="tracking-wide font-bold uppercase">{value.category}</span>
-                        <span className="leading-relaxed">{value.skills.join(", ")}</span>
+                <CardContent>
+                    <div className="space-y-5">
+                        {skills.map((value) => (
+                            <div id={value.category} className="grid grid-rows-2 lg:grid-cols-[170px_1fr] border-b border-primary last:border-b-0">
+                                <span className="tracking-wide font-bold uppercase">{value.category}</span>
+                                <span className="leading-relaxed">{value.skills.join(", ")}</span>
+                            </div>
+                        ))}
                     </div>
-                ))}
+                </CardContent>
             </Card>
         </Section >
     )

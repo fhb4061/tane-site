@@ -1,6 +1,6 @@
 import { BriefcaseBusiness } from "lucide-react";
 import { Section, SectionHeader } from "../components/Section";
-import { Card } from "../components/Card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../components/Card";
 
 type ExperienceItem = {
     role: string;
@@ -49,17 +49,15 @@ export function Experiences() {
 
             {experiences.map((exp) => (
                 <Card id={exp.period}>
-                    {/* header */}
-                    <div>
-                        <h3 className="text-xl lg:text-2xl font-bold">{exp.role}</h3>
-                        <div className="grid text-faded-fg">
-                            <span>{exp.company}</span>
-                            <span>{exp.period}</span>
-                        </div>
-                    </div>
+                    <CardHeader>
+                        <CardTitle>{exp.role}</CardTitle>
+                        <CardDescription>
+                            <p>{exp.company}</p>
+                            <p>{exp.period}</p>
+                        </CardDescription>
+                    </CardHeader>
 
-                    {/* content */}
-                    <div className="py-5">
+                    <CardContent>
                         <div className="grid gap-5">
                             {exp.bullets.map((resp) => (
                                 <span id={resp}>
@@ -67,7 +65,7 @@ export function Experiences() {
                                 </span>
                             ))}
                         </div>
-                    </div>
+                    </CardContent>
                 </Card>
             ))}
 
