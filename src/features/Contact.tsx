@@ -13,7 +13,7 @@ type PortfolioContact = {
 // usually get this from api maybe but will leave it here for simplicity
 const contact: PortfolioContact = {
     email: "jonathanlopeti@gmail.com",
-    phoneNumber: "+61 401 237 175",
+    phoneNumber: "+61401237175",
     phoneLabel: "+61 401 237 175",
     linkedinUrl: "https://www.linkedin.com/in/tane-lopeti",
     linkedinLabel: "linkedin.com/in/tane-lopeti",
