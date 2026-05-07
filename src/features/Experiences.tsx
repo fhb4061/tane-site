@@ -45,7 +45,7 @@ export function Experiences() {
             <div className="space-y-4">
                 <div className="flex gap-2 items-center">
                     <BriefcaseBusiness className="size-5" />
-                    <h3 className="text-xl">Experience</h3>
+                    <h3 className="text-xl font-semibold">Experience</h3>
                 </div>
 
                 {experiences.map((exp) => (

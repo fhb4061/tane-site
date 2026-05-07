@@ -32,7 +32,7 @@ export function Skills() {
             <div className="space-y-4">
                 <div className="flex gap-2 items-center">
                     <WrenchIcon className="size-5" />
-                    <h3 className="text-xl">Skills</h3>
+                    <h3 className="text-xl font-semibold">Skills</h3>
                 </div>
 
                 <Card>
