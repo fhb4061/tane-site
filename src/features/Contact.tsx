@@ -1,6 +1,6 @@
 import { MailIcon, PhoneCallIcon } from "lucide-react";
-import { LinkedInIcon } from "../components/LinkedInIcon";
-import { GithubIcon } from "../components/GithubIcon";
+import { LinkedInIcon } from "../icons/LinkedInIcon";
+import { GithubIcon } from "../icons/GithubIcon";
 import type { ComponentProps } from "react";
 
 type PortfolioContact = {
