@@ -6,7 +6,7 @@ type SectionProps = {
 
 export function Section({ children, id }: SectionProps) {
     return (
-        <section className="p-3 w-full" id={id}>
+        <section className="lg:p-3 w-full" id={id}>
             <div className="space-y-4">
                 {children}
             </div>
@@ -14,13 +14,11 @@ export function Section({ children, id }: SectionProps) {
     )
 }
 
-type SectionHeaderProps = {
-    className?: string;
-} & PropsWithChildren;
+type SectionHeaderProps = PropsWithChildren;
 
 export function SectionHeader({ children }: SectionHeaderProps) {
     return (
-        <div className={`flex gap-2 items-center`}>
+        <div className="flex gap-2 items-center">
             {children}
         </div>
     )

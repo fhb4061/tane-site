@@ -1,6 +1,7 @@
 import { BriefcaseBusiness } from "lucide-react";
 import { Section, SectionHeader } from "../components/Section";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../components/Card";
+import { Heading } from "../components/Heading";
 
 type ExperienceItem = {
     role: string;
@@ -43,8 +44,10 @@ export function Experiences() {
     return (
         <Section id="experience">
             <SectionHeader>
-                <BriefcaseBusiness size={30} className="stroke-primary" />
-                <h2 className="text-2xl lg:text-3xl font-semibold">Experiences</h2>
+                <BriefcaseBusiness className="stroke-primary size-5 lg:size-8" />
+                <Heading size={2}>
+                    <span className="uppercase">Experiences</span>
+                </Heading>
             </SectionHeader>
 
             {experiences.map((exp) => (

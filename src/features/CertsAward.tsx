@@ -1,19 +1,22 @@
 import { Award } from "lucide-react";
 import { Section, SectionHeader } from "../components/Section";
 import { Card, CardContent, CardHeader, CardTitle } from "../components/Card";
+import { Heading } from "../components/Heading";
 
 export function CertsAward() {
     return (
         <Section>
             <SectionHeader>
-                <Award size={30} className="stroke-primary" />
-                <h2 className="text-2xl lg:text-3xl font-semibold">Certs & Awards</h2>
+                <Award className="stroke-primary size-5 lg:size-8" />
+                <Heading size={2}>
+                    <span className="uppercase">Certs & Awards</span>
+                </Heading>
             </SectionHeader>
             <div className="grid gap-5 grid-cols-1 lg:grid-cols-2">
                 <Card>
                     <CardHeader>
                         <CardTitle>
-                            <span className="uppercase">Education</span>
+                            Education
                         </CardTitle>
                     </CardHeader>
                     <CardContent>
@@ -27,7 +30,7 @@ export function CertsAward() {
                 <Card>
                     <CardHeader>
                         <CardTitle>
-                            <span className="uppercase">Certification</span>
+                            Certification
                         </CardTitle>
                     </CardHeader>
                     <CardContent>

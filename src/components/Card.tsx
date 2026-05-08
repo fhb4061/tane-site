@@ -14,7 +14,7 @@ export function Card({ children, id }: CardProps) {
 
 export function CardHeader({ children }: PropsWithChildren) {
     return (
-        <div className="pb-3">
+        <div className="lg:pb-3">
             {children}
         </div>
     )
@@ -22,7 +22,7 @@ export function CardHeader({ children }: PropsWithChildren) {
 
 export function CardTitle({ children }: PropsWithChildren) {
     return (
-        <div className="text-xl lg:text-2xl font-bold">
+        <div className="text-lg lg:text-xl font-bold">
             {children}
         </div>
     )
@@ -38,7 +38,7 @@ export function CardDescription({ children }: PropsWithChildren) {
 
 export function CardContent({ children }: PropsWithChildren) {
     return (
-        <div className="py-5">
+        <div className="py-3 lg:py-5">
             {children}
         </div>
     )
