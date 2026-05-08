@@ -12,7 +12,7 @@
   /* --primary: oklch(0.83 0.17 145); */
   --primary: oklch(50% 0.31299 329.232);
   --foreground: #ffff;
-  --foreground-hover: oklch(90% 0.31299 329.232);
+  --foreground-hover: var(--color-teal-400);
 }
 
 @layer base {
