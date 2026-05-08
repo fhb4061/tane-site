@@ -23,7 +23,7 @@ const contact: PortfolioContact = {
 
 export function Contact() {
     return (
-        <ul className="space-y-2.5">
+        <ul className="lg:space-y-2.5">
             <li className="flex items-center gap-4">
                 <MailIcon size={20} className="stroke-primary" />
                 <a className="p-1 underline underline-offset-4 hover:text-foreground-hover outline-0 focus-visible:ring-2 focus-visible:ring-primary" href={`mailto:${contact.email}`}>
