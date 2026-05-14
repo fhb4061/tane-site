@@ -36,7 +36,6 @@ export function Skills() {
                     <span className="uppercase">Skills</span>
                 </Heading>
             </SectionHeader>
-
             <Card>
                 <CardContent>
                     <div className="space-y-2 lg:space-y-5">

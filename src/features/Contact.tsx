@@ -1,4 +1,7 @@
-import { FolderGit2, MailIcon, MessageSquareMore, PhoneCallIcon } from "lucide-react";
+import { MailIcon, PhoneCallIcon } from "lucide-react";
+import { LinkedInIcon } from "../icons/LinkedInIcon";
+import { GithubIcon } from "../icons/GithubIcon";
+import type { ComponentProps } from "react";
 
 type PortfolioContact = {
     email: string;
@@ -21,49 +24,62 @@ const contact: PortfolioContact = {
     githubLink: "https://github.com/fhb4061",
 }
 
+function ListItem(props: ComponentProps<"li">) {
+    return (
+        <li
+            className="flex items-center gap-4"
+            {...props}
+        />
+    )
+}
+
+function Link(props: ComponentProps<"a">) {
+    return (
+        <a
+            className="group flex items-center gap-4 p-1 underline underline-offset-4 hover:text-foreground-hover outline-0 focus-visible:ring-2 focus-visible:ring-primary"
+            {...props}
+        />
+    )
+}
+
 export function Contact() {
     return (
         <ul className="lg:space-y-2.5">
-            <li className="flex items-center gap-4">
-                <MailIcon size={20} className="stroke-primary" />
-                <a className="p-1 underline underline-offset-4 hover:text-foreground-hover outline-0 focus-visible:ring-2 focus-visible:ring-primary" href={`mailto:${contact.email}`}>
+            <ListItem>
+                <Link href={`mailto:${contact.email}`}>
+                    <MailIcon className="size-5 stroke-primary group-hover:stroke-foreground-hover" />
                     {contact.email}
-                </a>
-            </li>
+                </Link>
+            </ListItem>
 
-            <li className="flex items-center gap-4">
-                <MessageSquareMore size={20} className="stroke-primary" />
-                <a
-                    className="p-1 underline underline-offset-4 hover:text-foreground-hover outline-0 focus-visible:ring-2 focus-visible:ring-primary"
+            <ListItem>
+                <Link
                     href={contact.linkedinUrl}
                     rel="noopener noreferrer"
                     target="_blank"
                 >
+                    <LinkedInIcon className="size-5 fill-primary group-hover:fill-foreground-hover" />
                     {contact.linkedinLabel}
-                </a>
-            </li>
+                </Link>
+            </ListItem>
 
-            <li className="flex items-center gap-4">
-                <FolderGit2 size={20} className="stroke-primary" />
-                <a
-                    className="p-1 underline underline-offset-4 hover:text-foreground-hover outline-0 focus-visible:ring-2 focus-visible:ring-primary"
+            <ListItem>
+                <Link
                     href={contact.githubLink}
                     rel="noopener noreferrer"
                     target="_blank"
                 >
+                    <GithubIcon className="size-5 fill-primary group-hover:fill-foreground-hover" />
                     {contact.githubLabel}
-                </a>
-            </li>
+                </Link>
+            </ListItem>
 
-            <li className="flex items-center gap-4">
-                <PhoneCallIcon size={20} className="stroke-primary" />
-                <a
-                    className="p-1 underline underline-offset-4 hover:text-foreground-hover outline-0 focus-visible:ring-2 focus-visible:ring-primary"
-                    href={`tel:${contact.phoneNumber}`}
-                >
+            <ListItem>
+                <Link href={`tel:${contact.phoneNumber}`}>
+                    <PhoneCallIcon className="size-5 stroke-primary group-hover:stroke-foreground-hover" />
                     {contact.phoneLabel}
-                </a>
-            </li>
+                </Link>
+            </ListItem>
         </ul>
     )
 }
