@@ -2,13 +2,14 @@ import type { PropsWithChildren } from "react";
 
 type CardProps = {
     id?: string;
+    ariaLabel?: string;
 } & PropsWithChildren;
 
-export function Card({ children, id }: CardProps) {
+export function Card({ children, id, ariaLabel }: CardProps) {
     return (
-        <div className="p-4 border border-primary rounded-3xl w-full" id={id}>
+        <section className="p-4 border border-primary rounded-3xl w-full" id={id} aria-label={ariaLabel ?? id}>
             {children}
-        </div>
+        </section>
     );
 }
 
@@ -22,9 +23,9 @@ export function CardHeader({ children }: PropsWithChildren) {
 
 export function CardTitle({ children }: PropsWithChildren) {
     return (
-        <div className="text-lg lg:text-xl font-bold">
+        <h3 className="text-lg lg:text-xl font-bold">
             {children}
-        </div>
+        </h3>
     )
 }
 

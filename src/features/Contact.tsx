@@ -2,6 +2,7 @@ import { MailIcon, PhoneCallIcon } from "lucide-react";
 import { LinkedInIcon } from "../icons/LinkedInIcon";
 import { GithubIcon } from "../icons/GithubIcon";
 import type { ComponentProps } from "react";
+import { AppLink } from "../components/AppLink";
 
 type PortfolioContact = {
     email: string;
@@ -33,10 +34,10 @@ function ListItem(props: ComponentProps<"li">) {
     )
 }
 
-function Link(props: ComponentProps<"a">) {
+function Link(props: ComponentProps<typeof AppLink>) {
     return (
-        <a
-            className="group flex items-center gap-4 p-1 underline underline-offset-4 hover:text-foreground-hover outline-0 focus-visible:ring-2 focus-visible:ring-primary"
+        <AppLink
+            className="group flex items-center gap-4"
             {...props}
         />
     )

@@ -2,6 +2,9 @@ import { WrenchIcon } from "lucide-react";
 import { Section, SectionHeader } from "../components/Section";
 import { Card, CardContent } from "../components/Card";
 import { Heading } from "../components/Heading";
+import { SectionIcon } from "../components/Icon";
+import { Stack } from "../components/layout/Stack";
+import { DetailList } from "../components/DetailList";
 
 type Skills = {
     category: string;
@@ -31,21 +34,16 @@ export function Skills() {
     return (
         <Section id="skills">
             <SectionHeader>
-                <WrenchIcon className="stroke-primary size-5 lg:size-8" />
-                <Heading size={2}>
+                <SectionIcon icon={WrenchIcon} />
+                <Heading level={2}>
                     <span className="uppercase">Skills</span>
                 </Heading>
             </SectionHeader>
             <Card>
                 <CardContent>
-                    <div className="space-y-2 lg:space-y-5">
-                        {skills.map((value) => (
-                            <div id={value.category} className="grid grid-rows-2 pb-4 border-b border-primary lg:grid-cols-[170px_1fr] lg:pb-0 last:border-b-0">
-                                <span className="tracking-wide font-bold">{value.category}</span>
-                                <span className="leading-relaxed">{value.skills.join(", ")}</span>
-                            </div>
-                        ))}
-                    </div>
+                    <Stack className="space-y-2 lg:space-y-5">
+                        <DetailList items={skills.map((value) => ({ term: value.category, description: value.skills.join(", ") }))} />
+                    </Stack>
                 </CardContent>
             </Card>
         </Section >
