@@ -5,15 +5,9 @@ on:
       branches:
         - main
       types: [closed]
-env: 
-    BUCKET_NAME: "tane.com"
-    AWS_REGION: "ap-southeast-2"
-
-permissions:
-    id-token: write
 
 jobs:
-    S3PackageUpload:
+    TestBuild:
         if: github.event.pull_request.merged == true
         runs-on: ubuntu-latest
         steps:
@@ -30,19 +24,43 @@ jobs:
               run: npm ci
             
             - name: Test app
-              run: npm test
+              run: npm test            
+    S3BucketWrite:
+      needs: TestBuild
+      
+      env: 
+        BUCKET_NAME: "tane.com"
+        AWS_REGION: "ap-southeast-2"
+      
+      permissions:
+        id-token: write
+      
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout code
+          uses: actions/checkout@v5
             
-            - name: Build app
-              run: npm run build
+        - name: Setup node.js
+          uses: actions/setup-node@v5
+          with:
+              node-version: '20'
+              cache: 'npm'
+
+        - name: Install app
+          run: npm ci
+
+        - name: Build app
+          run: npm run build
+
+        - name: Configure AWS Credentials
+          uses: aws-actions/configure-aws-credentials@v6.1.0
+          with:
+            role-to-assume: arn:aws:iam::405481637631:role/tane-site-gba
+            aws-region: ${{ env.AWS_REGION }}
             
-            - name: Configure AWS Credentials
-              uses: aws-actions/configure-aws-credentials@v6.1.0
-              with:
-                role-to-assume: arn:aws:iam::405481637631:role/tane-site-gba
-                aws-region: ${{ env.AWS_REGION }}
-            
-            - name: Copy index.html to S3
-              run: |
-                aws s3 cp ./dist s3://${{ env.BUCKET_NAME }}/ --recursive
+        - name: Copy index.html to S3
+          run: |
+              aws s3 cp ./dist s3://${{ env.BUCKET_NAME }}/ --recursive
+        
 
     
