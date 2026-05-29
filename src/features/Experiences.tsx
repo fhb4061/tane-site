@@ -2,6 +2,8 @@ import { BriefcaseBusiness } from "lucide-react";
 import { Section, SectionHeader } from "../components/Section";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../components/Card";
 import { Heading } from "../components/Heading";
+import { SectionIcon } from "../components/Icon";
+import { Timeline } from "../components/Timeline";
 
 type ExperienceItem = {
     role: string;
@@ -44,14 +46,14 @@ export function Experiences() {
     return (
         <Section id="experience">
             <SectionHeader>
-                <BriefcaseBusiness className="stroke-primary size-5 lg:size-8" />
-                <Heading size={2}>
+                <SectionIcon icon={BriefcaseBusiness} />
+                <Heading level={2}>
                     <span className="uppercase">Experiences</span>
                 </Heading>
             </SectionHeader>
 
             {experiences.map((exp) => (
-                <Card id={exp.period}>
+                <Card key={exp.period} id={exp.period}>
                     <CardHeader>
                         <CardTitle>{exp.role}</CardTitle>
                         <CardDescription>
@@ -61,13 +63,7 @@ export function Experiences() {
                     </CardHeader>
 
                     <CardContent>
-                        <div className="grid gap-5">
-                            {exp.bullets.map((resp) => (
-                                <span id={resp}>
-                                    {resp}
-                                </span>
-                            ))}
-                        </div>
+                        <Timeline items={[{ title: exp.role, subtitle: `${exp.company}\n${exp.period}`, details: exp.bullets }]} />
                     </CardContent>
                 </Card>
             ))}

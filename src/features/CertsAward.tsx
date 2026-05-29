@@ -2,13 +2,15 @@ import { Award } from "lucide-react";
 import { Section, SectionHeader } from "../components/Section";
 import { Card, CardContent, CardHeader, CardTitle } from "../components/Card";
 import { Heading } from "../components/Heading";
+import { AppLink } from "../components/AppLink";
+import { SectionIcon } from "../components/Icon";
 
 export function CertsAward() {
     return (
         <Section>
             <SectionHeader>
-                <Award className="stroke-primary size-5 lg:size-8" />
-                <Heading size={2}>
+                <SectionIcon icon={Award} />
+                <Heading level={2}>
                     <span className="uppercase">Certs & Awards</span>
                 </Heading>
             </SectionHeader>
@@ -34,14 +36,12 @@ export function CertsAward() {
                         </CardTitle>
                     </CardHeader>
                     <CardContent>
-                        <a
+                        <AppLink
                             href="https://www.credly.com/badges/a788484c-dfee-40ad-a5b5-920053580638"
-                            rel="noopener noreferrer"
-                            target="_blank"
-                            className="p-1 underline underline-offset-4 hover:text-foreground-hover outline-0 focus-visible:ring-2 focus-visible:ring-primary"
+                            external
                         >
                             Azure Fundamentals
-                        </a>
+                        </AppLink>
                     </CardContent>
                 </Card>
             </div>
