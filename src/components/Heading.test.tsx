@@ -9,9 +9,9 @@ describe("Heading", () => {
     expect(screen.getByRole("heading", { name: "Title", level: 1 })).toBeTruthy();
   });
 
-  it("renders a level 3 heading when requested", () => {
-    render(<Heading level={3}>Card title</Heading>);
+  it("renders a level 2 heading when requested", () => {
+    render(<Heading level={2}>Card title</Heading>);
 
-    expect(screen.getByRole("heading", { name: "Card title", level: 3 })).toBeTruthy();
+    expect(screen.getByRole("heading", { name: "Card title", level: 2 })).toBeTruthy();
   });
 });
