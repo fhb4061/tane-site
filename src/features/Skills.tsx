@@ -3,7 +3,6 @@ import { Section, SectionHeader } from "../components/Section";
 import { Card, CardContent } from "../components/Card";
 import { Heading } from "../components/Heading";
 import { SectionIcon } from "../components/Icon";
-import { Stack } from "../components/layout/Stack";
 import { DetailList } from "../components/DetailList";
 
 type Skills = {
@@ -41,9 +40,9 @@ export function Skills() {
             </SectionHeader>
             <Card>
                 <CardContent>
-                    <Stack className="space-y-2 lg:space-y-5">
+                    <div className="space-y-2 lg:space-y-5">
                         <DetailList items={skills.map((value) => ({ term: value.category, description: value.skills.join(", ") }))} />
-                    </Stack>
+                    </div>
                 </CardContent>
             </Card>
         </Section >
