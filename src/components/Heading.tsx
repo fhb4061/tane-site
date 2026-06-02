@@ -1,12 +1,10 @@
 import type { PropsWithChildren } from "react";
 
 type HeadingProps = {
-    level?: 1 | 2 | 3;
-    size?: "page" | "section" | "card";
+    level?: 1 | 2;
 } & PropsWithChildren;
 
-export function Heading({ children, level = 1, size }: HeadingProps) {
-    const resolvedSize = size ?? (level === 1 ? "page" : level === 2 ? "section" : "card");
+export function Heading({ children, level = 1 }: HeadingProps) {
 
     if (level === 1) {
         return (
@@ -16,17 +14,9 @@ export function Heading({ children, level = 1, size }: HeadingProps) {
         )
     }
 
-    if (level === 2) {
-        return (
-            <h2 className="text-xl lg:text-2xl font-semibold">
-                {children}
-            </h2>
-        )
-    }
-
     return (
-        <h3 className={resolvedSize === "card" ? "text-lg lg:text-xl font-bold" : "text-lg lg:text-xl font-bold"}>
+        <h2 className="text-xl lg:text-2xl font-semibold">
             {children}
-        </h3>
+        </h2>
     )
 }

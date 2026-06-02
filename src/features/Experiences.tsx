@@ -3,7 +3,6 @@ import { Section, SectionHeader } from "../components/Section";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../components/Card";
 import { Heading } from "../components/Heading";
 import { SectionIcon } from "../components/Icon";
-import { Timeline } from "../components/Timeline";
 
 type ExperienceItem = {
     role: string;
@@ -63,7 +62,11 @@ export function Experiences() {
                     </CardHeader>
 
                     <CardContent>
-                        <Timeline items={[{ title: exp.role, subtitle: `${exp.company}\n${exp.period}`, details: exp.bullets }]} />
+                        <ul className="grid gap-5">
+                            {exp.bullets.map((detail) => (
+                                <li key={detail}>{detail}</li>
+                            ))}
+                        </ul>
                     </CardContent>
                 </Card>
             ))}
