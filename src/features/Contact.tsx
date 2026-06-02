@@ -45,7 +45,7 @@ function Link(props: ComponentProps<typeof AppLink>) {
 
 export function Contact() {
     return (
-        <ul className="lg:space-y-2.5">
+        <ul className="lg:space-y-2">
             <ListItem>
                 <Link href={`mailto:${contact.email}`}>
                     <MailIcon className="size-5 stroke-primary group-hover:stroke-foreground-hover" />

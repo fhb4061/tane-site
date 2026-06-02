@@ -2,7 +2,6 @@ import { UserRound } from "lucide-react";
 import { Section, SectionHeader } from "../components/Section";
 import { Heading } from "../components/Heading";
 import { SectionIcon } from "../components/Icon";
-import { Stack } from "../components/layout/Stack";
 
 export function About() {
     return (
@@ -13,9 +12,7 @@ export function About() {
                     <span className="uppercase">About</span>
                 </Heading>
             </SectionHeader>
-            <Stack>
-                <p>I specialize in React Typescript and Java Spring Boot with a strong focus on clean architecture, simplicity, performance, and both user and developer experience. I have delivered scalable, user-centric software across banking and public-sector domains.</p>
-            </Stack>
+            <p>I specialize in React Typescript and Java Spring Boot with a strong focus on clean architecture, simplicity, performance, and both user and developer experience. I have delivered scalable, user-centric software across banking and public-sector domains.</p>
         </Section>
     )
 }
