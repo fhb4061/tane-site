@@ -1,4 +1,6 @@
 import type { ComponentProps } from "react";
+import { Button } from "./ui/button";
+import { cn } from "@/lib/utils";
 
 type AppLinkProps = {
   external?: boolean;
@@ -6,11 +8,13 @@ type AppLinkProps = {
 
 export function AppLink({ external, className, ...props }: AppLinkProps) {
   return (
-    <a
-      className={`p-1 underline underline-offset-4 hover:text-foreground-hover outline-0 focus-visible:ring-2 focus-visible:ring-primary ${className}`}
-      rel={external ? "noopener noreferrer" : props.rel}
-      target={external ? "_blank" : props.target}
-      {...props}
-    />
+    <Button asChild variant="link">
+      <a
+        className={cn('p-1 hover:text-foreground-hover', className)}
+        rel={external ? "noopener noreferrer" : props.rel}
+        target={external ? "_blank" : props.target}
+        {...props}
+      />
+    </Button >
   );
 }
