@@ -14,17 +14,17 @@ jobs:
             - name: Checkout code
               uses: actions/checkout@v5
             
-            - name: Setup node.js
-              uses: actions/setup-node@v5
+            - name: Install pnpm
+              uses: pnpm/action-setup@v6
               with:
-                node-version: '20'
-                cache: 'npm'
+                version: 10
+                cache: true
             
             - name: Install app
-              run: npm ci
+              run: pnpm install --frozen-lockfile
             
             - name: Test app
-              run: npm test            
+              run: pnpm test
     S3BucketWrite:
       needs: TestBuild
       
@@ -40,17 +40,17 @@ jobs:
         - name: Checkout code
           uses: actions/checkout@v5
             
-        - name: Setup node.js
-          uses: actions/setup-node@v5
+        - name: Install pnpm
+          uses: pnpm/action-setup@v6
           with:
-              node-version: '20'
-              cache: 'npm'
+            version: 10
+            cache: true
 
         - name: Install app
-          run: npm ci
+          run: pnpm install --frozen-lockfile
 
         - name: Build app
-          run: npm run build
+          run: pnpm build
 
         - name: Configure AWS Credentials
           uses: aws-actions/configure-aws-credentials@v6.1.0
