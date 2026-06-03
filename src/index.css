@@ -8,9 +8,7 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-foreground-hover: var(--foreground-hover);
   --color-primary: var(--primary);
-  --color-faded-fg: var(--color-zinc-400);
   --font-heading: var(--font-sans);
   --font-sans: 'Space Grotesk Variable', sans-serif;
   --color-sidebar-ring: var(--sidebar-ring);
@@ -51,10 +49,8 @@
 }
 
 :root {
-  /* --primary: oklch(0.83 0.17 145); */
   --primary: oklch(0.518 0.253 323.949);
   --foreground: oklch(0.148 0.004 228.8);
-  --foreground-hover: var(--color-teal-400);
   --background: oklch(1 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.148 0.004 228.8);
@@ -87,13 +83,14 @@
   --sidebar-ring: oklch(0.723 0.014 214.4);
 }
 
+body {
+  @apply bg-background text-foreground text-base;
+}
+
 @layer base {
 
   body {
-    background-color: var(--color-background);
-    color: var(--color-foreground);
-    font-size: var(--text-base);
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground text-base;
   }
 
   html {

@@ -10,7 +10,7 @@ export function AppLink({ external, className, ...props }: AppLinkProps) {
   return (
     <Button asChild variant="link">
       <a
-        className={cn('p-1 hover:text-foreground-hover', className)}
+        className={cn('p-1', className)}
         rel={external ? "noopener noreferrer" : props.rel}
         target={external ? "_blank" : props.target}
         {...props}

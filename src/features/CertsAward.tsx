@@ -1,13 +1,13 @@
 import { Award } from "lucide-react";
 import { Section, SectionHeader } from "../components/Section";
-import { Card, CardContent, CardHeader, CardTitle } from "../components/Card";
 import { Heading } from "../components/Heading";
 import { AppLink } from "../components/AppLink";
 import { SectionIcon } from "../components/Icon";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export function CertsAward() {
     return (
-        <Section>
+        <Section id="certs">
             <SectionHeader>
                 <SectionIcon icon={Award} />
                 <Heading level={2}>
@@ -21,12 +21,10 @@ export function CertsAward() {
                             Education
                         </CardTitle>
                     </CardHeader>
-                    <CardContent>
-                        <div className="grid gap-1">
-                            <span className="font-bold">Bachelor of Computer and Information Science</span>
-                            <span className="text-faded-fg">Auckland University of Technology</span>
-                            <span className="text-faded-fg">Feb 2015 - Aug 2018</span>
-                        </div>
+                    <CardContent className="grid gap-1 text-sm">
+                        <span className="font-bold">Bachelor of Computer and Information Science</span>
+                        <span className="text-muted-foreground">Auckland University of Technology</span>
+                        <span className="text-muted-foreground">Feb 2015 - Aug 2018</span>
                     </CardContent>
                 </Card>
                 <Card>

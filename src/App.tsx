@@ -1,4 +1,3 @@
-// import { Header } from "./components/Header";
 import { Skills } from "./features/Skills";
 import { Experiences } from "./features/Experiences";
 import { About } from "./features/About";
