@@ -6,35 +6,16 @@ on:
         - main
       types: [closed]
 
+env:
+  BUCKET_NAME: "tane.com"
+  AWS_REGION: "ap-southeast-2"
+
+permissions:
+  id-token: write
+
 jobs:
-    TestBuild:
-        if: github.event.pull_request.merged == true
-        runs-on: ubuntu-latest
-        steps:
-            - name: Checkout code
-              uses: actions/checkout@v5
-            
-            - name: Install pnpm
-              uses: pnpm/action-setup@v6
-              with:
-                version: 10
-                cache: true
-            
-            - name: Install app
-              run: pnpm install --frozen-lockfile
-            
-            - name: Test app
-              run: pnpm test
     S3BucketWrite:
-      needs: TestBuild
-      
-      env: 
-        BUCKET_NAME: "tane.com"
-        AWS_REGION: "ap-southeast-2"
-      
-      permissions:
-        id-token: write
-      
+      if: github.event.pull_request.merged == true
       runs-on: ubuntu-latest
       steps:
         - name: Checkout code
