@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
-import { SectionIcon } from "./Icon";
+import { SectionIcon } from "./SectionIcon";
 
 function SampleIcon() {
   return <svg data-testid="sample-icon" />;

@@ -1,7 +1,7 @@
 import { WrenchIcon } from "lucide-react";
-import { Section, SectionHeader } from "../components/Section";
-import { Heading } from "../components/Heading";
-import { SectionIcon } from "../components/Icon";
+import { Section, SectionHeader } from "@/components/Section";
+import { Heading } from "@/components/Heading";
+import { SectionIcon } from "@/components/SectionIcon";
 import { Card, CardContent } from "@/components/ui/card";
 
 type Skills = {

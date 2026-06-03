@@ -1,8 +1,8 @@
 import { MailIcon, PhoneCallIcon } from "lucide-react";
-import { LinkedInIcon } from "../icons/LinkedInIcon";
-import { GithubIcon } from "../icons/GithubIcon";
+import { LinkedInIcon } from "@/icons/LinkedInIcon";
+import { GithubIcon } from "@/icons/GithubIcon";
 import type { ComponentProps, ReactNode } from "react";
-import { AppLink } from "../components/AppLink";
+import { AppLink } from "@/components/AppLink";
 
 type ContactType = {
     link: string;

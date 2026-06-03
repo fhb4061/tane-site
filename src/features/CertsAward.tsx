@@ -1,8 +1,8 @@
 import { Award } from "lucide-react";
-import { Section, SectionHeader } from "../components/Section";
-import { Heading } from "../components/Heading";
-import { AppLink } from "../components/AppLink";
-import { SectionIcon } from "../components/Icon";
+import { Section, SectionHeader } from "@/components/Section";
+import { Heading } from "@/components/Heading";
+import { AppLink } from "@/components/AppLink";
+import { SectionIcon } from "@/components/SectionIcon";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export function CertsAward() {
