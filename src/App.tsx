@@ -11,12 +11,12 @@ function App() {
         <Hero />
       </aside>
 
-      <main className="space-y-7 lg:space-y-14">
+      <div className="space-y-7 lg:space-y-14">
         <About />
         <Skills />
         <Experiences />
         <CertsAward />
-      </main>
+      </div>
     </div>
   )
 }

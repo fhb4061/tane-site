@@ -11,14 +11,16 @@ createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <div className="min-h-screen">
       <Header />
-      <BrowserRouter>
-        <Routes>
-          <Route path='/' element={<App />} />
-          <Route path='/auth' element={<Auth />} />
+      <main role="main">
+        <BrowserRouter>
+          <Routes>
+            <Route path='/' element={<App />} />
+            <Route path='/auth' element={<Auth />} />
 
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </main>
     </div>
   </StrictMode>,
 )
