@@ -56,7 +56,7 @@ export function Contact() {
         <ul className="lg:space-y-2">
             {contactList.map((item) => {
                 return (
-                    <ListItem>
+                    <ListItem key={item.link}>
                         <Link
                             href={item.link}
                             rel="noopener noreferrer"

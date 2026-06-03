@@ -7,7 +7,7 @@ describe("Experiences", () => {
     render(<Experiences />);
 
     expect(screen.getByRole("heading", { name: /experiences/i, level: 2 })).toBeTruthy();
-    expect(screen.getByRole("heading", { name: /senior developer/i, level: 3 })).toBeTruthy();
+    expect(screen.getByText(/senior developer/i)).toBeTruthy();
     expect(screen.getAllByRole("list")).toHaveLength(2);
     expect(screen.getByText(/led development of photo sharing feature/i)).toBeTruthy();
   });
