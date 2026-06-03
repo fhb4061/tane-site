@@ -1,6 +1,6 @@
 import { MapPin } from "lucide-react";
 import { Contact } from "./Contact";
-import { Heading } from "../components/Heading";
+import { Heading } from "@/components/Heading";
 
 export function Hero() {
     return (
