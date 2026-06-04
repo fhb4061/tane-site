@@ -1,7 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css';
-import App from './App.tsx'
+import { Portfolio } from './pages/Portfolio.tsx'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Header } from './components/Header.tsx';
 import { Auth } from './pages/Auth.tsx';
@@ -16,7 +16,7 @@ createRoot(document.getElementById('root')!).render(
         <main role="main">
           <BrowserRouter>
             <Routes>
-              <Route path='/' element={<App />} />
+              <Route path='/' element={<Portfolio />} />
               <Route path='/auth' element={<Auth />} />
 
               <Route path="*" element={<NotFound />} />
