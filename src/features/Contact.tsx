@@ -20,7 +20,7 @@ export function Contact() {
     const contactList: ContactMap[] = getContacts().map((item) => ({ ...item, icon: iconMap[item.type] }));
 
     return (
-        <ul className="lg:space-y-2">
+        <ul className="flex gap-2">
             {contactList.map((item) => {
                 return (
                     <li key={item.link}>
@@ -28,9 +28,9 @@ export function Contact() {
                             href={item.link}
                             rel="noopener noreferrer"
                             target="_blank"
+                            className="hover:text-primary-foreground fill-primary hover:fill-primary-foreground"
                         >
                             {item.icon}
-                            {item.label}
                         </AppLink>
                     </li>
                 )
