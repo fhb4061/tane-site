@@ -3,37 +3,20 @@ import { LinkedInIcon } from "@/icons/LinkedInIcon";
 import { GithubIcon } from "@/icons/GithubIcon";
 import type { ComponentProps, ReactNode } from "react";
 import { AppLink } from "@/components/AppLink";
+import { ContactEnum, contactList, type ContactType } from "@/services/contactService";
 
-type ContactType = {
-    link: string;
-    label: string;
-    icon: ReactNode;
+type ContactMap = ContactType & { icon: ReactNode };
+
+const iconMap: Record<ContactEnum, ReactNode> = {
+    [ContactEnum.GITHUB]: <GithubIcon className="fill-primary size-5" />,
+    [ContactEnum.EMAIL]: <MailIcon className="size-5" />,
+    [ContactEnum.LINKEDIN]: <LinkedInIcon className="fill-primary size-5" />,
+    [ContactEnum.TELEPHONE]: <PhoneCallIcon className="size-5" />
 }
 
-const contactList: ContactType[] = [
-    {
-        link: "mailto:jonathanlopeti@gmail.com",
-        label: "jonathanlopeti@gmail.com",
-        icon: <MailIcon className="size-5" />
-    },
-    {
-        link: "https://www.linkedin.com/in/tane-lopeti",
-        label: "linkedin.com/in/tane-lopeti",
-        icon: <LinkedInIcon className="fill-primary size-5" />
-    },
-    {
-        link: "https://github.com/fhb4061",
-        label: "github.com/fhb4061",
-        icon: <GithubIcon className="fill-primary size-5" />
-    },
-    {
-        link: "tel:+61401237175",
-        label: "+61 401 237 175",
-        icon: <PhoneCallIcon className="size-5" />
-    },
-]
+const contactListMap: ContactMap[] = contactList.map((contact) => ({ ...contact, icon: iconMap[contact.type] }));
 
-function ListItem(props: ComponentProps<"li">) {
+const ListItem = (props: ComponentProps<"li">) => {
     return (
         <li
             className="flex items-center gap-4"
@@ -42,7 +25,7 @@ function ListItem(props: ComponentProps<"li">) {
     )
 }
 
-function Link(props: ComponentProps<typeof AppLink>) {
+const Link = (props: ComponentProps<typeof AppLink>) => {
     return (
         <AppLink
             className="group flex items-center gap-4"
@@ -51,10 +34,10 @@ function Link(props: ComponentProps<typeof AppLink>) {
     )
 }
 
-export function Contact() {
+export const Contact = () => {
     return (
         <ul className="lg:space-y-2">
-            {contactList.map((item) => {
+            {contactListMap.map((item) => {
                 return (
                     <ListItem key={item.link}>
                         <Link
