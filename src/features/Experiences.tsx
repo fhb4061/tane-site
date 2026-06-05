@@ -1,6 +1,6 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { TypographyH3 } from "@/pages/Portfolio";
-import { experiences } from "@/services/experienceService";
+import { experiences } from "@/lib/services/experienceService";
 
 export function Experiences() {
     return (

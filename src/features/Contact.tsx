@@ -3,7 +3,7 @@ import { LinkedInIcon } from "@/icons/LinkedInIcon";
 import { GithubIcon } from "@/icons/GithubIcon";
 import type { ComponentProps, ReactNode } from "react";
 import { AppLink } from "@/components/AppLink";
-import { ContactEnum, contactList, type ContactType } from "@/services/contactService";
+import { ContactEnum, contactList, type ContactType } from "@/lib/services/contactService";
 
 type ContactMap = ContactType & { icon: ReactNode };
 

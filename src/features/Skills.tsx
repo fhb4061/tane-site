@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { TypographyH3 } from "@/pages/Portfolio";
-import { skills } from "@/services/skillService";
+import { skills } from "@/lib/services/skillService";
 
 export function Skills() {
     return (
