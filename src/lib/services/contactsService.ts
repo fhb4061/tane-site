@@ -2,7 +2,6 @@ export enum ContactEnum {
     EMAIL,
     LINKEDIN,
     GITHUB,
-    TELEPHONE
 }
 
 export type ContactType = {
@@ -27,11 +26,6 @@ export const getContacts = (): ContactType[] => {
             type: ContactEnum.GITHUB,
             link: "https://github.com/fhb4061",
             label: "github.com/fhb4061",
-        },
-        {
-            type: ContactEnum.TELEPHONE,
-            link: "tel:+61401237175",
-            label: "+61 401 237 175",
         },
     ];
 }

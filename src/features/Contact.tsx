@@ -1,4 +1,4 @@
-import { MailIcon, PhoneCallIcon } from "lucide-react";
+import { MailIcon } from "lucide-react";
 import { LinkedInIcon } from "@/icons/LinkedInIcon";
 import { GithubIcon } from "@/icons/GithubIcon";
 import type { ReactNode } from "react";
@@ -13,7 +13,6 @@ const iconMap: Record<ContactEnum, ReactNode> = {
     [ContactEnum.EMAIL]: <MailIcon className="size-5" />,
     [ContactEnum.LINKEDIN]: <LinkedInIcon className="fill-primary size-5" />,
     [ContactEnum.GITHUB]: <GithubIcon className="fill-primary size-5" />,
-    [ContactEnum.TELEPHONE]: <PhoneCallIcon className="size-5" />
 }
 
 export function Contact() {
